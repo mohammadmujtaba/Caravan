@@ -5,7 +5,9 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -39,5 +41,5 @@ public class OrderEntity {
     Customer customer;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL)
-    Item item;
+    List<Item> items = new ArrayList<>();
 }

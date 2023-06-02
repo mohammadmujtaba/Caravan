@@ -28,6 +28,9 @@ public class Customer {
     @Column(name = "mobile_no", unique = true, nullable = false)
     String mobNo;
 
+    @Column(name = "age")
+    Integer age;
+
     @Column(name = "email_id", unique = true, nullable = false)
     String emailId;
 

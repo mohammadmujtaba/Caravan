@@ -3,10 +3,7 @@ package com.example.Caravan.Model;
 import com.example.Caravan.Enum.Category;
 import com.example.Caravan.Enum.ProductStatus;
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.util.ArrayList;
@@ -16,6 +13,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Table(name = "product")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Product {
@@ -28,6 +26,7 @@ public class Product {
     @Column(name = "name")
     String name;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "category")
     Category category;
 

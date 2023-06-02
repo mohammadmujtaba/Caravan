@@ -1,5 +1,6 @@
 package com.example.Caravan.Model;
 
+import com.example.Caravan.Enum.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -32,7 +33,7 @@ public class Seller {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "gender", nullable = false)
-    String gender;
+    Gender gender;
 
     @OneToMany(mappedBy = "seller", cascade = CascadeType.ALL)
     List<Product> products = new ArrayList<>();
